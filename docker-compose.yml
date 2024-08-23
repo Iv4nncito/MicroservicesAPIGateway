@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./gateway:/app
+    environment:
+      GIN_MODE: "release"
+
+  user_service:
+    build:
+      context: ./microservices/user_service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+
+  payment_service:
+    build:
+      context: ./microservices/payment_service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+
+  analytics_service:
+    build:
+      context: ./microservices/analytics_service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
