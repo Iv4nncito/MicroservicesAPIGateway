@@ -1,1 +1,1 @@
-# MicroservicesAPIGateway
+MicroservicesAPIGateway is designed to serve as the primary entry point for managing and routing API requests in a microservices architecture. It initializes the server environment and configures the routing mechanisms, ensuring efficient and secure access to various microservices. This gateway simplifies the integration and interoperability between different services, providing a unified interface for clients.
