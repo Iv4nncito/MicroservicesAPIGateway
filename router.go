@@ -10,18 +10,15 @@ import (
 )
 
 func loadEnv() {
-    err := godotenv.Load()
-    if err != nil {
+    if err := godotenv.Load(); err != nil {
         log.Fatalf("Error loading .env file: %v", err)
     }
 }
 
 func handleRequests() {
     myRouter := mux.NewRouter().StrictSlash(true)
-
     myRouter.HandleFunc("/microservice1", microservice1Handler)
     myRouter.HandleFunc("/microservice2", microservice2Handler)
-
     log.Fatal(http.ListenAndServe(":"+os.Getenv("APP_PORT"), myRouter))
 }
 
