@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppRouter from './AppRouter';
 import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './AppRouter';
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
